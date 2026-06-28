@@ -1,9 +1,9 @@
 # Changelog
 
-## YYYY-MM-DD
+## 2026-06-29 - 0.1.0
 
 ### Added
 
-### Changed
-
-### Fixed
+- Initial ChatLean package scaffold with `chatlean` CLI.
+- ChatEnv provider entry point for `chatlean` configuration discovery.
+- CI and tag-driven publish workflow scaffold.
