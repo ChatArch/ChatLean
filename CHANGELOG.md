@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-21 - 0.1.3
+
+### Changed
+
+- Migrated the canonical `chatlean` Click tree to `chatstyle.add_tree_option`, with detailed `--tree` and signature-free `--tree-brief` views.
+- Updated the supported runtimes to `chatstyle>=0.2.0,<0.3.0` and `chatenv>=0.2.10,<0.3.0`.
+
 ## 2026-08-12 - 0.1.2
 
 ### Added

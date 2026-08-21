@@ -26,22 +26,25 @@ pip install ChatLean
 chatlean --help
 chatlean --version
 chatlean --tree
+chatlean --tree-brief
 ```
 
 ## Current CLI Tree
 
 ```text
-chatlean  # ChatArch Lean tooling entrypoint
-├── --help  # show command help
-├── --version  # show the installed package version
-└── --tree  # show this CLI tree
+chatlean
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
 ## CLI Boundary
 
 - The current CLI only exposes root options and has no business subcommands.
-- `--tree` is generated from the real Click command registration and is used to align README, docs, and tests.
-- When real Lean environment, package, proof, or execution orchestration commands are added later, update the Click registration first and then sync docs from the real `chatlean --tree` output.
+- `--tree` is generated from the real Click registration by the shared ChatStyle runtime and retains parameter signatures by default; `--tree-brief` keeps command nodes and descriptions while omitting parameter signatures.
+- The current root-only surface contains only value-free flags, so both modes are textually identical for now; parameterized commands will make the signature difference visible.
+- When real Lean environment, package, proof, or execution orchestration commands are added later, update the Click registration first and then sync docs from the real `chatlean --tree` and `chatlean --tree-brief` outputs.
 
 ## Layout
 

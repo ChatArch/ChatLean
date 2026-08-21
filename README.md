@@ -26,22 +26,25 @@ pip install ChatLean
 chatlean --help
 chatlean --version
 chatlean --tree
+chatlean --tree-brief
 ```
 
 ## 当前 CLI 树
 
 ```text
-chatlean  # ChatArch Lean tooling entrypoint
-├── --help  # show command help
-├── --version  # show the installed package version
-└── --tree  # show this CLI tree
+chatlean
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
 ## CLI 边界
 
 - 当前 CLI 只有根选项，没有业务子命令。
-- `--tree` 从实际 Click 命令注册面生成，用来校对 README、文档和测试。
-- 后续新增真实 Lean 环境、包、证明或执行编排命令时，必须先更新 Click 注册面，再用真实 `chatlean --tree` 同步文档。
+- `--tree` 通过 ChatStyle 共享运行时从实际 Click 注册面生成，并默认保留参数签名；`--tree-brief` 保留命令节点和说明，但省略参数签名。
+- 当前 root-only 注册面只有无值 flag，因此两种模式的文本暂时相同；新增带参数的命令后，两种输出会体现签名差异。
+- 后续新增真实 Lean 环境、包、证明或执行编排命令时，必须先更新 Click 注册面，再用真实 `chatlean --tree` 和 `chatlean --tree-brief` 同步文档。
 
 ## 目录结构
 

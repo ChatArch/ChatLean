@@ -27,6 +27,9 @@ def test_docs_workflows_use_chatarch_site_url():
     assert 'github.io' not in preview
     assert 'mkdocs gh-deploy --force' in deploy
     assert 'mkdocs build --strict' in ci
+    assert 'chatlean --version' in ci
+    assert 'chatlean --tree' in ci
+    assert 'chatlean --tree-brief' in ci
 
 
 def test_mkdocs_material_renderer_and_public_domain():
